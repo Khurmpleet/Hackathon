@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive scaling -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Title that shows up in the browser tab -->
+  <title>Complete Uchebudike | Portfolio</title>
+
+  <!-- Google Fonts used for styling -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Inline CSS Styling Starts Here -->
+  <style>
+    /* ========== Root Variables for Theme Colors and Fonts ========== */
+    :root {
+      --bg: #0F111A; /* Background color */
+      --text: #EAEAEA; /* Main text color */
+      --gold: #C9B037; /* Accent color (gold) */
+      --card-bg: #1A1C26; /* Background for cards */
+      --secondary: #A6A6A6; /* Subtext color */
+      --font-serif: 'Merriweather', serif;
+      --font-sans: 'Inter', sans-serif;
+    }
+
+    /* Reset box-sizing and remove default margin/padding */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* General body styling */
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+    }
+
+    /* Links default style */
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* Underline link on hover */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== Header Section Styling ========== */
+    header {
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+      background: linear-gradient(to bottom, #0F111A, #1A1C26);
+      border-bottom: 2px solid var(--gold);
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      font-family: var(--font-serif);
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--secondary);
+    }
+
+    /* ========== Navigation Bar ========== */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.2rem;
+      background: #12141E;
+      border-bottom: 1px solid var(--gold);
+      position: sticky; /* Stays fixed at the top on scroll */
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    /* ========== Main Content Area ========== */
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+
+    section {
+      margin-bottom: 5rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-family: var(--font-serif);
+      margin-bottom: 1.5rem;
+      border-left: 6px solid var(--gold);
+      padding-left: 1rem;
+    }
+
+    /* ========== About Section ========== */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about img {
+      max-width: 280px;
+      border-radius: 50%; /* Makes image circular */
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .about div {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    /* CV Download Button */
+    .cv-button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--gold);
+      color: #0F111A;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cv-button:hover {
+      background-color: #b89d2e;
+    }
+
+    /* ========== Skills Section ========== */
+    .skills ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      list-style: square;
+      padding-left: 1rem;
+    }
+
+    /* ========== Card Layout for Projects or Info ========== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    /* ========== Portfolio Section ========== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-item {
+      background: #181A24;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--card-bg);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    /* ========== Contact Section ========== */
+    .contact ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact li {
+      margin-bottom: 0.75rem;
+    }
+
+    /* ========== Footer Section ========== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: var(--secondary);
+      border-top: 1px solid var(--gold);
+      background: #12141E;
+    }
+
+    /* ========== Responsive Styles for Smaller Screens ========== */
+    @media (max-width: 700px) {
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== Header Section ========== -->
+  <header>
+    <h1>Complete Uchebudike</h1>
+    <p>Software Developer | Tech Enthusiast</p>
+  </header>
+
+  <!-- ========== Navigation Bar ========== -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Languages</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ========== Main Content Sections ========== -->
+  <main>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <img src="complete.jpg" alt="Your photo" />
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I'm a software developer who genuinely enjoys solving problems and building things that make people's lives easier...
+        </p>
+        <a href="Complete_Uchebudike_CV.pdf" class="cv-button" target="_blank">Download My CV</a>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Programming Languages</h2>
+      <ul class="skills">
+        <li>HTML5</li>
+        <li>CSS3</li>    
+        <li>Git</li>
+      </ul>
+    </section>
+
+    <!-- Portfolio / Projects Section -->
+    <section id="portfolio">
+      <h2>Projects</h2>
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="portfolio-item">
+          <h3>KevinCookieCompany - Cooking Recipe</h3>
+          <p>A platform for sharing and discovering cooking recipes.<br>
+            <a href="https://github.com/Khurmpleet/KevinCookieCompany.com" target="_blank">View Project</a>
+          </p>
+        </div>
+        <!-- Project 2 -->
+        <div class="portfolio-item">
+          <h3>Mock Calculator Website</h3>
+          <p>A simple calculator application built with HTML, CSS, and JavaScript.<br>
+            <a href="https://github.com/Khurmpleet/Calculator" target="_blank">View Project</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Let's connect or work together:</p>
+      <ul>
+        <li>Email: <a href="mailto:cunuchebudike@gmail.com">Khurmpleet@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/Khurmpleet" target="_blank">Khurmpleet</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/complete-uchebudike/" target="_blank">Complete Uchebudike</a></li>
+        <li>Location: Remote / Nigeria</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    &copy; 2025 Khurmpleet. Built in Haste 👿
+  </footer>
+
+</body>
+</html>
